@@ -23,6 +23,13 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+if (typeof window !== "undefined") {
+  // Browser-only
+  import("@syncfusion/ej2-base").then((ej2base) => {
+    ej2base.registerLicense("YOUR_SYNCFUSION_LICENSE_KEY");
+  });
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
