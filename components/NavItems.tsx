@@ -3,13 +3,18 @@ import { sidebarItems } from "~/constants";
 import { cn } from "~/lib/utils";
 
 const NavItems = () => {
+  const user = {
+    name: "Adrian",
+    email: "contact@gmail.com",
+    imageUrl: "/assets/images/david.webp",
+  };
   return (
     <section className="nav-items">
       <Link to="/" className="link-logo">
         <img
-          src="src/public/assets/icons/logo.svg"
+          src="/public/assets/icons/logo.svg"
           alt="logo"
-          className="size-[30px]"
+          className="w-8 h-8"
         />
         <h1>Tourly</h1>
       </Link>
@@ -26,9 +31,9 @@ const NavItems = () => {
                   <img
                     src={icon}
                     alt={label}
-                    className={
-                      "group-hover:brightness-0 size-0 group-hover:invert ${isActive ? 'brightness-0 invert': 'text-dark-200'}"
-                    }
+                    className={`group-hover:brightness-0 w-6 h-6 group-hover:invert ${
+                      isActive ? "brightness-0 invert" : "text-dark-200"
+                    }`}
                   />
                   {label}
                 </div>
@@ -36,6 +41,13 @@ const NavItems = () => {
             </NavLink>
           ))}
         </nav>
+
+        <footer className="nave-footer">
+          <img
+            src={user?.imageUrl || "assets/images/david.webp"}
+            alt={user?.name || "David"}
+          />
+        </footer>
       </div>
     </section>
   );
