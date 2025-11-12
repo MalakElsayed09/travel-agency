@@ -1,7 +1,8 @@
 // @ts-nocheck
 
 import { Link } from "react-router";
-import { SidebarComponent } from "@syncfusion/ej2-react-navigations";
+import pkg from "@syncfusion/ej2-react-navigations";
+const { SidebarComponent } = pkg;
 import NavItems from "./NavItems";
 
 const MobileSidebar = () => {
@@ -21,7 +22,7 @@ const MobileSidebar = () => {
             className="size-[30px]"
           />
 
-          <h1>Tourvisto</h1>
+          <h1>Tourly</h1>
         </Link>
 
         <button onClick={toggleSidebar}>
